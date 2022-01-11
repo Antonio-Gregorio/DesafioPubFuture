@@ -10,13 +10,12 @@ def getDespesas(filtro = False,type = False, args = False, args2 = False):
         req = requests.get('http://localhost:8000/despesa/listar')
         list = []
 
-        list.append(['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta'])
 
         for x in req.json():
                 if x != []:
-                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoPagamento'],x['conta']])
+                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
-        print(tabulate(list))
+        print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
     
     else:
             if type == '1':
@@ -29,30 +28,26 @@ def getDespesas(filtro = False,type = False, args = False, args2 = False):
                 req = requests.get('http://localhost:8000/despesa/listar')
                 list = []
 
-                list.append(['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta'])
-
                 for x in req.json():
                         if x != []:
-                                DataA = str(x['dataRecebimento']).split('-')
+                                DataA = str(x['dataPagamento']).split('-')
                                 DataAtual = datetime.datetime(int(DataA[0]), int(DataA[1]), int(DataA[2]))
 
                                 if  DataAtual >= dataIM and DataAtual <= dataFM:
-                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoPagamento'],x['conta']])
+                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
-                print(tabulate(list))
+                print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
 
             elif type == '2':
                 req = requests.get('http://localhost:8000/despesa/listar')
                 list = []
 
-                list.append(['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta'])
-
                 for x in req.json():
                         if x != []:
                                 if x['tipoDespesa'] == args:
-                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoPagamento'],x['conta']])
+                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
-                print(tabulate(list))
+                print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
 
 
 def postDespesa(data):

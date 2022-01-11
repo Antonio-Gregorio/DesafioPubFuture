@@ -1,4 +1,6 @@
 from api.api_receitas import getReceitas
+from api.api_despesas import getDespesas
+from scripts.despesas import criarDespesa, deletarDespesa, editarDespesa, filtrarDespesa
 from scripts.receitas import criarReceita, deletarReceita, editarReceita, filtrarReceita
 import os
 
@@ -20,6 +22,11 @@ class Interface:
             if op == 1:
                 self.instance = 2
                 self.menu_receitas()
+            
+            elif op == 2:
+                self.instance = 2
+                self.menu_despesas()
+                
             elif op == 4:
                 self.instance = 0
 
@@ -42,6 +49,29 @@ class Interface:
 
             if op == '4':
                 filtrarReceita()
+
+            if op == '5':
+                self.instance = 1
+
+    # Menu de Despesas
+    def menu_despesas(self):
+        while self.instance == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(getDespesas())
+            print('\n1.Criar\n2.Editar\n3.Deletar\n4.Filtrar\n5.Voltar\n')
+            op = input('Digite uma opção: ')
+
+            if op == '1':
+                criarDespesa()
+
+            if op == '2':
+                editarDespesa()
+            
+            if op == '3':
+                deletarDespesa()
+
+            if op == '4':
+                filtrarDespesa()
 
             if op == '5':
                 self.instance = 1

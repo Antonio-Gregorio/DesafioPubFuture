@@ -10,13 +10,11 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
         req = requests.get('http://localhost:8000/receita/listar')
         list = []
 
-        list.append(['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta'])
-
         for x in req.json():
                 if x != []:
                         list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
-        print(tabulate(list))
+        print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
     
     else:
             if type == '1':
@@ -29,8 +27,6 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
                 req = requests.get('http://localhost:8000/receita/listar')
                 list = []
 
-                list.append(['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta'])
-
                 for x in req.json():
                         if x != []:
                                 DataA = str(x['dataRecebimento']).split('-')
@@ -39,20 +35,18 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
                                 if  DataAtual >= dataIM and DataAtual <= dataFM:
                                         list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
-                print(tabulate(list))
+                print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
 
             elif type == '2':
                 req = requests.get('http://localhost:8000/receita/listar')
                 list = []
-
-                list.append(['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta'])
 
                 for x in req.json():
                         if x != []:
                                 if x['tipoReceita'] == args:
                                         list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
-                print(tabulate(list))
+                print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
 
 
 def postReceitas(data):
