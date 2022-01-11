@@ -13,7 +13,7 @@ def getDespesas(filtro = False,type = False, args = False, args2 = False):
 
         for x in req.json():
                 if x != []:
-                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
+                        list.append([x['id'],'R${:,.2f}'.format(float(str(x['valor']).replace(",","."))),x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
         print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
     
@@ -34,7 +34,7 @@ def getDespesas(filtro = False,type = False, args = False, args2 = False):
                                 DataAtual = datetime.datetime(int(DataA[0]), int(DataA[1]), int(DataA[2]))
 
                                 if  DataAtual >= dataIM and DataAtual <= dataFM:
-                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
+                                        list.append([x['id'],'R${:,.2f}'.format(float(str(x['valor']).replace(",","."))),x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
                 print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
 
@@ -45,7 +45,7 @@ def getDespesas(filtro = False,type = False, args = False, args2 = False):
                 for x in req.json():
                         if x != []:
                                 if x['tipoDespesa'] == args:
-                                        list.append([x['id'],x['valor'],x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
+                                        list.append([x['id'],'R${:,.2f}'.format(float(str(x['valor']).replace(",","."))),x['dataPagamento'],x['dataPagamentoEsperado'],x['tipoDespesa'],x['conta']])
 
                 print(tabulate(list, headers=['ID','Valor','Data de Pagamento','Data de Pagamento Esperado','Tipo de Despesa','Conta']))
 

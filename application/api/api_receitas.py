@@ -3,6 +3,9 @@ import datetime
 
 from tabulate import tabulate
 
+cyan = "\033[96m"
+header = "\033[95m"
+
 def getReceitas(filtro = False,type = False, args = False, args2 = False):
 
     if filtro == False:
@@ -12,7 +15,7 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
 
         for x in req.json():
                 if x != []:
-                        list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
+                        list.append([x['id'],str('R${:,.2f}'.format(float(str(x['valor']).replace(",",".")))),x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
         print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
     
@@ -33,7 +36,7 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
                                 DataAtual = datetime.datetime(int(DataA[0]), int(DataA[1]), int(DataA[2]))
 
                                 if  DataAtual >= dataIM and DataAtual <= dataFM:
-                                        list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
+                                        list.append([x['id'],'R${:,.2f}'.format(float(str(x['valor']).replace(",","."))),x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
                 print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
 
@@ -44,7 +47,7 @@ def getReceitas(filtro = False,type = False, args = False, args2 = False):
                 for x in req.json():
                         if x != []:
                                 if x['tipoReceita'] == args:
-                                        list.append([x['id'],x['valor'],x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
+                                        list.append([x['id'],'R${:,.2f}'.format(float(str(x['valor']).replace(",","."))),x['dataRecebimento'],x['dataRecebimentoEsperado'],x['descrição'],x['tipoReceita'],x['conta']])
 
                 print(tabulate(list, headers=['ID','Valor','Data de Recebimento','Data de Recebimento Esperado','Descrição','Tipo de Receita','Conta']))
 

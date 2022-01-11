@@ -40,7 +40,7 @@ class Interface:
     def menu_receitas(self):
         while self.instance == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print(getReceitas())
+            getReceitas()
             print('\n1.Criar\n2.Editar\n3.Deletar\n4.Filtrar\n5.Voltar\n')
             op = input('Digite uma opção: ')
 
@@ -63,7 +63,7 @@ class Interface:
     def menu_despesas(self):
         while self.instance == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print(getDespesas())
+            getDespesas()
             print('\n1.Criar\n2.Editar\n3.Deletar\n4.Filtrar\n5.Voltar\n')
             op = input('Digite uma opção: ')
 
@@ -86,7 +86,7 @@ class Interface:
     def menu_contas(self):
         while self.instance == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print(getContas())
+            getContas()
             print('\n1.Criar\n2.Editar\n3.Deletar\n4.Transferir\n5.Voltar\n')
             op = input('Digite uma opção: ')
 
