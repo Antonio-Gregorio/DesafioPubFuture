@@ -1,6 +1,5 @@
 import requests
 import datetime
-import json
 
 from tabulate import tabulate
 
