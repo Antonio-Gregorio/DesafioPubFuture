@@ -30,7 +30,7 @@ export async function TransferirContaDB(conta) {
             if(res[0].saldo >= conta.valor) {
                 db.run(`UPDATE Contas SET saldo = ? WHERE id = ?`, [res[0].saldo - conta.valor, conta.id1])
                 db.all(`SELECT saldo FROM Contas WHERE id = ?`, [conta.id2]).then(res2 => {
-                    db.run(`UPDATE Contas SET saldo = ? WHERE id = ?`, [res2[0].saldo + conta.valor, conta.id2])
+                    db.run(`UPDATE Contas SET saldo = ? WHERE id = ?`, [Number(res2[0].saldo) + Number(conta.valor), conta.id2])
                 })
             } else {
                 return "Valor Insuficiente na primeira conta."
