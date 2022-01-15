@@ -33,8 +33,3 @@ export async function DeletarConta (req, res) {
     console.log("[👍] Conta Deletada..")
 }
 
-// TRANSFERIR SALDO CONTA
-export async function TransferirConta (req, res) {
-    res.json(await TransferirContaDB(req.body))
-    console.log("[👍] Conta Transferencia Realizada..")
-}
