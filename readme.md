@@ -13,12 +13,15 @@ Para Iniciar a aplicação, você deve possuir o Java instalado em seu computado
 
 
 ![RECEITAS](/README/java-receitas.png "Receita")
+
 Aqui temos a Tela de Receitas, com um sistema de Cadastrar, Editar, Deletar e Filtrar os dados recebidos na tabela.
 
 ![DESPESAS](/README/java-despesas.png "Despesa")
+
 Aqui temos a Tela de Despesas, com um sistema de Cadastrar, Editar, Deletar e Filtrar os dados recebidos na tabela.
 
 ![Contas](/README/java-contas.png "Conta")
+
 Aqui temos a Tela de Contas, com um sistema de Cadastrar, Editar, Deletar e Transferir valor entre as contas, os dados recebidos na tabela.
 <br>
 <br>
