@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { CadastrarConta, DeletarConta, EditarConta, ListarConta, TotalConta, TransferirConta } from '../api/Conta.js';
+import { CadastrarConta, DeletarConta, EditarConta, ListarConta, TransferirConta } from '../api/Conta.js';
 import { CadastrarDespesa, DeletarDespesa, EditarDespesa, ListarDespesa } from '../api/Despesa.js';
 import { CadastrarReceita, DeletarReceita, EditarReceita, ListarReceita } from '../api/Receita.js';
 

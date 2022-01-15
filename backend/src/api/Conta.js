@@ -1,4 +1,4 @@
-import { CadastrarContaDB, DeletarContaDB, EditarContaDB, ListarContaDB, TotalContaDB, TransferirContaDB } from '../database/ContaDB.js';
+import { CadastrarContaDB, DeletarContaDB, EditarContaDB, ListarContaDB, TransferirContaDB } from '../database/ContaDB.js';
 
 
 export async function ListarConta (req, res) {
@@ -33,3 +33,8 @@ export async function DeletarConta (req, res) {
     console.log("[👍] Conta Deletada..")
 }
 
+// TRANSFERIR SALDO CONTA
+export async function TransferirConta (req, res) {
+    res.json(await TransferirContaDB(req.body))
+    console.log("[👍] Conta Transferencia Realizada..")
+}
