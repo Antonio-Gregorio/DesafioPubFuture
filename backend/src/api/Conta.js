@@ -38,9 +38,3 @@ export async function TransferirConta (req, res) {
     res.json(await TransferirContaDB(req.body))
     console.log("[👍] Conta Transferencia Realizada..")
 }
-
-// TOTAL DE SALDO
-export async function TotalConta (req, res) {
-    res.json(await TotalContaDB())
-    console.log("[👍] Conta Total Exibido..")
-}

@@ -39,10 +39,3 @@ export async function TransferirContaDB(conta) {
     })
 }
 
-export async function TotalContaDB() {
-    return abrirDb().then(db => {
-        return db.all(`SELECT sum(saldo) from Contas`).then(res => {
-            return res[0]
-        })
-    })
-}

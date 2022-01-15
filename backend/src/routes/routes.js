@@ -36,5 +36,3 @@ rota.put('/conta/editar', EditarConta)
 rota.delete('/conta/deletar', DeletarConta)
 // TRANSFERIR CONTA
 rota.post('/conta/transferir', TransferirConta)
-// TOTAL CONTA
-rota.get('/conta/total', TotalConta)

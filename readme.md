@@ -60,6 +60,31 @@ yarn
 yarn start
 ```
 
+### Receitas
+Cadastrar: [POST] http://localhost:8000/receita/cadastrar<br>
+Editar: [PUT] http://localhost:8000/receita/editar<br>
+Deletar: [DELETE] http://localhost:8000/receita/deletar<br>
+Listar: [GET] http://localhost:8000/receita/listar<br>
+<br>
+<br>
+
+### Despesas
+Cadastrar: [POST] http://localhost:8000/despesa/cadastrar<br>
+Editar: [PUT] http://localhost:8000/despesa/editar<br>
+Deletar: [DELETE] http://localhost:8000/despesa/deletar<br>
+Listar: [GET] http://localhost:8000/despesa/listar<br>
+<br>
+<br>
+
+### Contas
+Cadastrar: [POST] http://localhost:8000/conta/cadastrar<br>
+Editar: [PUT] http://localhost:8000/conta/editar<br>
+Deletar: [DELETE] http://localhost:8000/conta/deletar<br>
+Listar: [GET] http://localhost:8000/conta/listar<br>
+Transferir: [POST] http://localhost:8000/conta/transferir<br>
+<br>
+<br>
+
 
 # Softwares
 
