@@ -10,6 +10,9 @@ Foi desenvolvido um software de finanças com um backend e conexão por api.
 <br>
 
 Para Iniciar a aplicação, você deve possuir o Java instalado em seu computador, logo em seguida entre na pasta Java-Application e inicie o programa executavel DesafioPubFuture.jar
+<br>
+<br>
+O Código da aplicação Java se encontra em https://github.com/Antonio-Gregorio/Java-DesafioPubFuture
 
 
 ![RECEITAS](/README/java-receitas.png "Receita")
